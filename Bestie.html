@@ -1,0 +1,144 @@
+<h1>10.Kawan Terbaik</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+td{
+background: yellow;
+cursor: pointer;
+transition: .2s;
+
+}	
+td:hover{
+	background: white}
+.tabelku {
+	width: 100%;
+	max-width: 500px
+	text-align: center;
+
+}	
+</style>
+
+<table class="tabelku">
+	<tr>
+		<td>No.</td>
+		<td>Nama</td>
+		<td>Alamat</td>
+		<td>Aksi</td>
+		
+	</tr>
+
+	<tr id="row_1">
+		<td>1.</td>
+		<td class="nama_mhs">Kuryati</td>
+		<td>jagapura</td>
+		<td class="hapus" id="hapus_1">Hapus</td>
+		
+
+	</tr>
+
+	<tr id="row_2">
+		<td>2.</td>
+		<td class="nama_mhs">Dhelia</td>
+		<td>Tegal</td>
+		<td class="hapus" id="hapus_2">Hapus</td>
+	</tr>
+
+	<tr id="row_3">
+		<td>3.</td>
+		<td class="nama_mhs">Diyan</td>
+		<td>Ciamais</td>
+		<td class="hapus" id="hapus_3">Hapus</td>
+	</tr>
+
+	<tr id="row_4">
+		<td>4.</td>
+		<td class="nama_mhs">Septi</td>
+		<td>Bengkulu</td>
+		<td class="hapus" id="hapus_4">Hapus</td>
+	</tr>
+
+	<tr id="row_5">
+		<td>5.</td>
+		<td class="nama_mhs">Salsa</td>
+		<td>Pemalang</td>
+		<td class="hapus" id="hapus_5">Hapus</td>
+	</tr>
+
+	<tr id="row_6">
+		<td>6.</td>
+		<td class="nama_mhs">Jihan</td>
+		<td>Tegal</td>
+		<td class="hapus" id="hapus_6">Hapus</td>
+	</tr>
+
+	<tr id="row_7">
+		<td>7.</td>
+		<td class="nama_mhs">Agnes</td>
+		<td>Kuningan</td>
+		<td class="hapus" id="hapus_7">Hapus</td>
+	</tr>
+
+	<tr id="row_8">
+		<td>8.</td>
+		<td class="nama_mhs">Rya</td>
+		<td>Jakarta</td>
+		<td class="hapus" id="hapus_8">Hapus</td>
+	</tr>
+
+	<tr id="row_9">
+		<td>9.</td>
+		<td class="nama_mhs">Del</td>
+		<td>Malang</td>
+		<td class="hapus" id="hapus_9">Hapus</td>
+	</tr>
+
+	<tr id="row_10">
+		<td>10.</td>
+		<td class="nama_mhs">wanty</td>
+		<td>Jakarta</td>
+		<td class="hapus"vid="hapus_10">Hapus</td>
+	</tr>
+
+<table>
+
+<script> 
+	$(document).ready(function(){
+		// alert(0)
+		$('.nama_mhs').click(function(){
+			// alert(1)
+			let isi = $(this).text();
+			// alert(isi);
+
+			let isi2 = prompt('Ubah dengan:', isi);
+			if(!isi2) return;
+			// alert(isi2);
+
+			$(this).text(isi2)
+		})
+
+
+
+		$('.hapus').click(function(){
+			// alert(1)
+			let yakin = confirm('Yakin mau menghapus?');
+			if(!yakin) return;
+
+			let id = $(this).prop('id');
+			// alert(id);
+			
+			let rid = id.split('__');
+			let baris_ke = rid[1];
+
+			// alert(baris_ke);
+			
+			$('#row__'+baris_ke).slideUp()
+
+
+			// alert('Anda yakin')
+
+
+
+		})
+	})
+
+	</script>	
+	
